@@ -6,5 +6,115 @@
 			"dependsOn": [],
 			"customAuth": false
 		}
+	},
+	"function": {
+		"register": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": []
+		},
+		"fetch": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "myamplify68745807",
+					"attributes": [
+						"UserPoolId"
+					]
+				}
+			]
+		},
+		"lambdget": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "myamplify68745807",
+					"attributes": [
+						"UserPoolId"
+					]
+				},
+				{
+					"category": "function",
+					"resourceName": "register",
+					"attributes": [
+						"Name"
+					]
+				},
+				{
+					"category": "function",
+					"resourceName": "fetch",
+					"attributes": [
+						"Name"
+					]
+				},
+				{
+					"category": "api",
+					"resourceName": "registerAPI",
+					"attributes": [
+						"ApiName",
+						"ApiId"
+					]
+				}
+			]
+		}
+	},
+	"api": {
+		"registerAPI": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "register",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				},
+				{
+					"category": "function",
+					"resourceName": "fetch",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"reachout": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "register",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"testthis": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "lambdget",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
 	}
 }

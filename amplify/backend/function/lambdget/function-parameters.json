@@ -1,0 +1,34 @@
+{
+    "permissions": {
+        "auth": {
+            "myamplify68745807": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        },
+        "function": {
+            "register": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ],
+            "fetch": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        },
+        "api": {
+            "registerAPI": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.login-clean {
+	background: rgb(241, 247, 252); padding: 80px 0px;
+}
+.login-clean form {
+	margin: 0px auto; padding: 40px; border-radius: 4px; width: 90%; color: rgb(80, 94, 108); max-width: 320px; box-shadow: 1px 1px 5px rgba(0,0,0,0.1); background-color: rgb(255, 255, 255);
+}
+.login-clean .illustration {
+	padding: 0px 0px 20px; text-align: center; color: rgb(244, 71, 107); font-size: 100px;
+}
+.login-clean form .form-control {
+	background: rgb(237, 239, 241); border-width: medium medium 1px; border-style: none none solid; border-color: currentColor currentColor rgb(223, 231, 241); border-radius: 0px; border-image: none; height: 42px; color: inherit; text-indent: 8px; box-shadow: none;
+}
+.login-clean form .btn-primary {
+	background: rgb(177, 46, 182); padding: 5px; border-radius: 4px; border: currentColor; border-image: none; margin-top: 26px; box-shadow: none; text-shadow: none;
+}
+.login-clean form .btn-primary:hover {
+	background: rgb(186, 85, 211);
+}
+.login-clean form .btn-primary:active {
+	background: rgb(186, 85, 211);
+}
+.login-clean form .btn-primary:active {
+	transform: translateY(1px);
+}
+.login-clean form .forgot {
+	text-align: center; color: rgb(27, 46, 65); font-size: 12px; text-decoration: none; display: block; opacity: 0.9;
+}
+.login-clean form .forgot:hover {
+	text-decoration: none; opacity: 1;
+}
+.login-clean form .forgot:active {
+	text-decoration: none; opacity: 1;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	background: url("https://scotch.io/wp-content/uploads/2014/07/61.jpg");
+}
+.container {
+	background: rgb(255, 255, 255); margin: 30px auto 0px; padding: 10px 50px 50px; width: 600px; font-family: "Roboto"; display: block;
+}
+h2 {
+	text-align: center; margin-bottom: 50px;
+}
+h2 small {
+	color: rgb(136, 136, 136); font-weight: normal; display: block;
+}
+.footer {
+	text-align: center;
+}
+.footer a {
+	color: rgb(83, 178, 200);
+}
+.group {
+	margin-bottom: 45px; position: relative;
+}
+input {
+	border-width: medium medium 1px; border-style: none none solid; border-color: currentColor currentColor rgb(117, 117, 117); padding: 10px 10px 10px 5px; border-image: none; width: 300px; font-size: 18px; display: block;
+}
+input:focus {
+	
+}
+label {
+	transition:0.2s; left: 5px; top: 10px; color: rgb(153, 153, 153); font-size: 18px; font-weight: normal; position: absolute; pointer-events: none; -webkit-transition: 0.2s ease all; -moz-transition: 0.2s ease all;
+}
+input:focus ~ label {
+	top: -20px; color: rgb(82, 100, 174); font-size: 14px;
+}
+input:valid ~ label {
+	top: -20px; color: rgb(82, 100, 174); font-size: 14px;
+}
+.bar {
+	width: 300px; display: block; position: relative;
+}
+.bar::before {
+	background: rgb(82, 100, 174); transition:0.2s; width: 0px; height: 2px; bottom: 1px; position: absolute; content: ""; -webkit-transition: 0.2s ease all; -moz-transition: 0.2s ease all;
+}
+.bar::after {
+	background: rgb(82, 100, 174); transition:0.2s; width: 0px; height: 2px; bottom: 1px; position: absolute; content: ""; -webkit-transition: 0.2s ease all; -moz-transition: 0.2s ease all;
+}
+.bar::before {
+	left: 50%;
+}
+.bar::after {
+	right: 50%;
+}
+input:focus ~ .bar::before {
+	width: 50%;
+}
+input:focus ~ .bar::after {
+	width: 50%;
+}
+.highlight {
+	left: 0px; top: 25%; width: 100px; height: 60%; position: absolute; opacity: 0.5; pointer-events: none;
+}
+input:focus ~ .highlight {
+	animation:inputHighlighter 0.3s; -webkit-animation: inputHighlighter 0.3s ease; -moz-animation: inputHighlighter 0.3s ease;
+}
+label {
+	font-family: sans-serif;
+}
+footer {
+	font-family: sans-serif;
+}
+label {
+	padding-right: 10px; font-size: 1rem;
+}
+select {
+	padding: 2px 5px; font-size: 0.9rem;
+}
+footer {
+	left: 30px; bottom: 30px; font-size: 0.8rem; position: absolute;
+}
+.output {
+	background: url("/media/examples/hamster.jpg") no-repeat center / cover; position: relative;
+}

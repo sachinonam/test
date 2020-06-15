@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "auth": {
+            "myamplify68745807": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

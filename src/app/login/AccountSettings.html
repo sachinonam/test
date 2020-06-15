@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Reachout</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+</head>
+
+<BODY>
+    <DIV class="login-clean">
+       <FORM style="max-width: 700px;">
+          <H1 class="text-center">Account Settings</H1>
+          <H7 class="text-center">Use this form to change your contact number,Address details, Notificatons and Availability</H7>
+          <DIV class="container d-md-flex justify-content-md-center"><IMG class="d-md-flex justify-content-md-center" 
+             style='width: 150px; background-image: url("assets/img/reachout.png");' src="Register_files/reachout.png"></DIV>
+          <DIV class="form-group">
+             <DIV class="row">
+                <DIV class="col">
+                   <DIV class="group">
+                      <INPUT id="first_name"  value="First Name" readonly type="text" >
+                        <SPAN  class="highlight"></SPAN>          
+                         <SPAN class="bar">
+                    </DIV>
+
+                   <DIV class="group"><INPUT tabindex="1" id="address_1" value="Address 1" required="" type="text">
+                        <SPAN class="highlight"></SPAN>  
+                         <SPAN class="bar"></SPAN>
+                         <LABEL>Address 1</LABEL>           
+                   </DIV>
+
+                   <DIV class="group"><INPUT id="city_name" value="City Name" required="" type="text">
+                     <SPAN class="highlight"></SPAN>  
+                      <SPAN class="bar"></SPAN>
+                      <LABEL>City Name</LABEL>           
+                </DIV>
+
+                   <DIV class="group">
+                     <INPUT  title="Only numeric values allowed" value="12345" id="zip_code" required="" type="number">
+                      <SPAN class="highlight"></SPAN>
+                      <SPAN class="bar"> </SPAN>
+                      <LABEL>Zip Code</LABEL> 
+                   </DIV>
+
+                   <DIV class="group">
+                    <INPUT id="email_id"  value="Your mail ID" readonly type="text">
+                      <SPAN  class="highlight"></SPAN>          
+                       <SPAN class="bar">
+                  </DIV>
+
+                  <DIV class="group">
+                    <INPUT id="services"  value="Selected Services" readonly type="text">
+                      <SPAN  class="highlight"></SPAN>          
+                       <SPAN class="bar">
+                  </DIV>
+
+                   <DIV class="group">
+                     <INPUT tabindex="11" title="Minimum 8 characters containing lowercase, uppercase, and at least one number" id="password" required="" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                      <SPAN class="highlight"></SPAN>         
+                      <SPAN class="bar"></SPAN>
+                      <LABEL>Password</LABEL>   
+                    </DIV>
+
+                   <DIV class="col offset-md-1"><BUTTON class="btn btn-primary btn-block" style="width: 200px;" type="submit">Submit</BUTTON></DIV>
+                </DIV>
+                
+                <DIV class="col">
+                    <DIV class="group">
+                         <INPUT id="last_name"  value="Last Name" readonly type="text">
+                          <SPAN  class="highlight"></SPAN>          
+                           <SPAN class="bar">
+                      </DIV>
+
+                      <DIV class="group">
+                          <INPUT tabindex="2" id="address_2" value="Address 2" required="" type="text">
+                        <SPAN class="highlight"></SPAN>  
+                         <SPAN class="bar"></SPAN>
+                         <LABEL>Address 2</LABEL>           
+                   </DIV>
+
+                   <DIV class="group">
+                       <INPUT tabindex="4" id="state" value="State" required="" type="text">
+                    <SPAN class="highlight"></SPAN>  
+                     <SPAN class="bar"></SPAN>
+                     <LABEL>State</LABEL>           
+               </DIV>
+
+                   <DIV class="group">
+                       <INPUT tabindex="8" title="Only numeric values allowed" id="phone_number" value="123456789" required="" type="number">
+                    <SPAN class="highlight"></SPAN>       
+                      <SPAN class="bar"></SPAN>
+                      <LABEL>Phone Number</LABEL>     
+                   </DIV>
+
+                   <DIV class="group">
+                       <INPUT id="user_type" value="User Type" readonly type="text">
+                    <SPAN class="highlight"></SPAN>  
+                     <SPAN class="bar"></SPAN>
+                </DIV>
+                 
+                <div class="custom-control custom-control-inline text-center custom-checkbox d-md-flex flex-fill justify-content-md-center">
+                    <input class="custom-control-input" type="checkbox" id="formCheck-1">
+                    <label class="custom-control-label" for="formCheck-1">Push Notification</label>
+                </div>
+
+                <div class="custom-control custom-switch d-md-flex flex-fill justify-content-md-center">
+                    <input class="custom-control-input" type="checkbox" id="formCheck-2">
+                    <label class="custom-control-label" for="formCheck-2">Stay Active/Inactive</label>
+                 </div>
+
+
+                   <DIV class="group">
+                  <INPUT tabindex="12" title="Make sure that Password matches" id="confirm_password" required="" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                    <SPAN class="highlight"></SPAN>       
+                      <SPAN class="bar"></SPAN>
+                      <LABEL>Confirm Password</LABEL>     
+                   </DIV>
+                  
+  
+
+                   <DIV class="col"><BUTTON tabindex="14" class="btn btn-primary btn-block" style="width: 200px;" 
+                      type="submit">Cancel</BUTTON></DIV>
+                </DIV>
+   <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="assets/js/stylish-portfolio.js"></script>
+             </DIV>
+          </DIV>
+       </FORM>
+    </DIV>
+ </BODY>
+
+</html>
