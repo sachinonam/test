@@ -4,10 +4,26 @@ import { Router } from '@angular/router';
 import API from '@aws-amplify/api';
 import {enableProdMode} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
+import Amplify, { Auth } from 'aws-amplify';
 
 
 //API.configure('GET');
 
+Amplify.configure({
+	API: {
+	  endpoints: [
+		{
+		  name: "testthis",
+		  endpoint: "https://idaaf5mauf.execute-api.us-east-2.amazonaws.com/dev",
+		  custom_header: async () => { 
+			return { Authorization : 'token' } 
+			// Alternatively, with Cognito User Pools use this:
+			// return { Authorization: `Bearer ${(await Auth.currentSession()).getAccessToken().getJwtToken()}` }
+		  }
+		}
+	  ]
+	}
+  });
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,8 +35,10 @@ export class AppComponent {
 	signedIn: boolean;
 	user : any;
 	greeting: any;
+	//formFields: FormFieldTypes;
     constructor( private amplifyService: AmplifyService,private router: Router ) {
 		
+
 		this.amplifyService.authStateChange$
 			.subscribe(authState => {
 				this.signedIn = authState.state === 'signedIn';
@@ -45,28 +63,25 @@ async function getData(){
 	
 const apiName = 'testthis';
 const path = '/done'; 
-
+str1 :  '';
 const myInit = { // OPTIONAL
-    headers: { 'Accept': 'application/json',
-    			'Content-Type': 'application/json',
-			"Access-Control-Allow-Origin" : "*",
-			  "Access-Control-Allow-Credentials" : true,
-			  "Access-Control-Allow-Methods" :   "OPTIONS,GET"
-			  }, // OPTIONAL
-    response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
-	'responseType': 'text',
-    queryStringParameters: {  // OPTIONAL
-        "User_id": 10,
-		"User_name": "xyzzzz",
-		"Password": "Hello$12",
-		"Email_address": "sujay@gmail.com"
-    },
+   
+		headers: { 
+			Authorization: `Bearer ${( await Auth.currentSession()).getIdToken().getJwtToken()}`,
+//"Access-Control-Allow-Origin": "*",
+  //    		"Access-Control-Allow-Credentials": true
+		  },
+		
+		
+  
 };
+//this.str1 = `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`
+
+
 //return path;
-return await API
-  .get(apiName, path, myInit)
+ return await API.get(apiName, path , myInit)
   .then(response => {
-    // Add your code here
+     return response.data
   })
   .catch(error => {
 	  debugger;

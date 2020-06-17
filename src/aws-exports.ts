@@ -7,8 +7,24 @@ const awsmobile = {
     "aws_cognito_region": "us-east-2",
     "aws_user_pools_id": "us-east-2_7qXs92Tjv",
     "aws_user_pools_web_client_id": "5b4su056bm9ir9lsk43d5m2vim",
-    "oauth": {}
-};
+    "oauth": {},
+    "aws_cloud_logic_custom": [
+        {
+            "name": "reachout",
+            "endpoint": "https://ozjyjefwg1.execute-api.us-east-2.amazonaws.com/dev",
+            "region": "us-east-2"
+        },
+        {
+            "name": "registerAPI",
+            "endpoint": "https://wxg2dwf216.execute-api.us-east-2.amazonaws.com/dev",
+            "region": "us-east-2"
+        },
+        {
+            "name": "testthis",
+            "endpoint": "https://idaaf5mauf.execute-api.us-east-2.amazonaws.com/dev",
+            "region": "us-east-2",
+       }
+    ]};
 
 
 export default awsmobile;

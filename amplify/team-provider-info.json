@@ -14,6 +14,11 @@
         "categories": {
             "auth": {
                 "myamplify68745807": {}
+            },
+            "function": {
+                "myamplify68745807PostConfirmation": {},
+                "myamplify68745807VerifyAuthChallengeResponse": {},
+                "myamplify68745807PreTokenGeneration": {}
             }
         }
     }

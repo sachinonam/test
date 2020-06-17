@@ -9,6 +9,38 @@ Parameters:
     Type: String
   
   
+  
+  
+  functionmyamplify68745807PostConfirmationArn: 
+    Type: String
+    Default: functionmyamplify68745807PostConfirmationArn
+  
+  functionmyamplify68745807PostConfirmationName: 
+    Type: String
+    Default: functionmyamplify68745807PostConfirmationName
+  
+  
+  
+  functionmyamplify68745807VerifyAuthChallengeResponseArn: 
+    Type: String
+    Default: functionmyamplify68745807VerifyAuthChallengeResponseArn
+  
+  functionmyamplify68745807VerifyAuthChallengeResponseName: 
+    Type: String
+    Default: functionmyamplify68745807VerifyAuthChallengeResponseName
+  
+  
+  
+  functionmyamplify68745807PreTokenGenerationArn: 
+    Type: String
+    Default: functionmyamplify68745807PreTokenGenerationArn
+  
+  functionmyamplify68745807PreTokenGenerationName: 
+    Type: String
+    Default: functionmyamplify68745807PreTokenGenerationName
+  
+  
+  
 
     
   identityPoolName:
@@ -58,10 +90,10 @@ Parameters:
         
   userpoolClientGenerateSecret:
     Type: String
-                
+            
   userpoolClientRefreshTokenValidity:
-    Type: Number
-                  
+    Type: String
+                      
   userpoolClientWriteAttributes:
     Type: CommaDelimitedList
               
@@ -93,6 +125,27 @@ Parameters:
     Type: CommaDelimitedList
               
   dependsOn:
+    Type: CommaDelimitedList
+        
+  thirdPartyAuth:
+    Type: String
+              
+  userPoolGroups:
+    Type: String
+              
+  adminQueries:
+    Type: String
+            
+  triggers:
+    Type: String
+                
+  hostedUI:
+    Type: String
+                              
+  parentStack:
+    Type: String
+                
+  permissions:
     Type: CommaDelimitedList
     
 Conditions:
@@ -148,6 +201,23 @@ Resources:
         
       
       
+      LambdaConfig:
+        
+        
+        
+        
+        
+          PostConfirmation: !Ref functionmyamplify68745807PostConfirmationArn
+        
+        
+        
+        
+          PreTokenGeneration: !Ref functionmyamplify68745807PreTokenGenerationArn
+        
+        
+          VerifyAuthChallengeResponse: !Ref functionmyamplify68745807VerifyAuthChallengeResponseArn
+        
+      
       
       AutoVerifiedAttributes: !Ref autoVerifiedAttributes
       
@@ -171,6 +241,45 @@ Resources:
         SnsCallerArn: !GetAtt SNSRole.Arn
         ExternalId: myampl68745807_role_external_id
     
+  
+    
+    
+  
+    
+  
+  UserPoolPostConfirmationLambdaInvokePermission: 
+    Type: "AWS::Lambda::Permission"
+    DependsOn: UserPool
+    Properties: 
+      Action: "lambda:invokeFunction"
+      Principal: "cognito-idp.amazonaws.com"
+      FunctionName: !Ref functionmyamplify68745807PostConfirmationName
+      SourceArn: !GetAtt UserPool.Arn
+    
+  
+  
+  
+  UserPoolPreTokenGenerationLambdaInvokePermission: 
+    Type: "AWS::Lambda::Permission"
+    DependsOn: UserPool
+    Properties: 
+      Action: "lambda:invokeFunction"
+      Principal: "cognito-idp.amazonaws.com"
+      FunctionName: !Ref functionmyamplify68745807PreTokenGenerationName
+      SourceArn: !GetAtt UserPool.Arn
+   
+  
+  UserPoolVerifyAuthChallengeResponseLambdaInvokePermission: 
+    Type: "AWS::Lambda::Permission"
+    DependsOn: UserPool
+    Properties: 
+      Action: "lambda:invokeFunction"
+      Principal: "cognito-idp.amazonaws.com"
+      FunctionName: !Ref functionmyamplify68745807VerifyAuthChallengeResponseName
+      SourceArn: !GetAtt UserPool.Arn
+    
+  # Updating lambda role with permissions to Cognito
+  
   
   UserPoolClientWeb:
   # Created provide application access to user pool
