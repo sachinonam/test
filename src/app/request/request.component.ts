@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-helper',
-  templateUrl: './helper.component.html',
-  styleUrls: ['./helper.component.css']
+  selector: 'app-request',
+  templateUrl: './request.component.html',
+  styleUrls: ['./request.component.css']
 })
-export class HelperComponent implements OnInit {
+export class RequestComponent implements OnInit {
   title = "ReachOut";
 	signedIn: boolean;
   user : any;
@@ -32,4 +32,7 @@ export class HelperComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  renderSeeker(): any {
+    this.router.navigate(['/seeker']);
+  }
 }

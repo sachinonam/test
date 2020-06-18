@@ -1,11 +1,11 @@
-<h1>Welcome!</h1>
+<div style="text-align:center"><h1>We are here to help!</h1></div>
+<div style="text-align:center">
 <amplify-authenticator usernameAlias="email">
       <amplify-sign-up
         slot="sign-up"
         usernameAlias="email"
         [formFields]="formFields"
       >
-
       <amplify-radio-button>
             <span class="radio-button">
               <input placeholder="" type="radio">
@@ -16,14 +16,5 @@
 </amplify-sign-up>
       <amplify-sign-in slot="sign-in" usernameAlias="email"></amplify-sign-in>
     </amplify-authenticator>
-
-<div style="text-align:center">
- 
-
-</div>
-
-<hr>
-      <router-outlet></router-outlet>
-<hr>
-
-
+  </div>
+  <hr><router-outlet></router-outlet>

@@ -16,8 +16,8 @@ Amplify.configure({
 		{
 		  name: "testthis",
 		  endpoint: "https://idaaf5mauf.execute-api.us-east-2.amazonaws.com/dev",
-		  custom_header: async () => { 
-			return { Authorization : 'token' } 
+		  custom_header: async () => {
+			return { Authorization : 'token' }
 			// Alternatively, with Cognito User Pools use this:
 			// return { Authorization: `Bearer ${(await Auth.currentSession()).getAccessToken().getJwtToken()}` }
 		  }
@@ -38,43 +38,43 @@ export class AppComponent {
 	greeting: any;
 	formFields: FormFieldTypes;
     constructor( private amplifyService: AmplifyService,private router: Router ) {
-		
+
 		this.formFields = [
 			{
 			  type: "email",
 			  label: "Email",
-			  placeholder: "custom email placeholder",
+			  placeholder: "Enter your email address",
 			  required: true,
 			},
 			{
 			  type: "password",
 			  label: "Password",
-			  placeholder: "custom password placeholder",
+			  placeholder: "Enter your password",
 			  required: true,
 			},
 			{
 			  type: "phone_number",
 			  label: "Custom Phone Label",
-			  placeholder: "custom Phone placeholder",
+			  placeholder: "Enter your Phone Number",
 			  required: false,
 			},
 		];
 
 
 
-		this.amplifyService.authStateChange$
-		.subscribe(authState => {
-			this.signedIn = authState.state === 'SignUp';
-			if (!authState.user) {
-				this.user = null;
-			} else {
-				this.user = authState.user;
-				this.greeting = "Hello " + this.user.username;
-				this.greeting = getData();	
-				this.router.navigate(['/seeker']);
-			}
-		});
-		
+		// this.amplifyService.authStateChange$
+		// .subscribe(authState => {
+		// 	this.signedIn = authState.state === 'SignUp';
+		// 	if (!authState.user) {
+		// 		this.user = null;
+		// 	} else {
+		// 		this.user = authState.user;
+		// 		this.greeting = "Hello " + this.user.username;
+		// 		this.greeting = getData();
+		// 		this.router.navigate(['/register']);
+		// 	}
+		// });
+
 		this.amplifyService.authStateChange$
 			.subscribe(authState => {
 				this.signedIn = authState.state === 'signIn';
@@ -83,38 +83,29 @@ export class AppComponent {
 				} else {
 					this.user = authState.user;
 					this.greeting = "Hello " + this.user.username;
-					this.greeting = getData();	
-					this.router.navigate(['/register']);
+					this.greeting = getData();
+					this.router.navigate(['/login']);
 				}
 			});
-
-		
-			
-		
-	
-}	
-
-	
-	
-
+}
 }
 
 
 async function getData(){
-	
+
 const apiName = 'testthis';
-const path = '/done'; 
+const path = '/done';
 str1 :  '';
 const myInit = { // OPTIONAL
-   
-		headers: { 
+
+		headers: {
 			Authorization: `Bearer ${( await Auth.currentSession()).getIdToken().getJwtToken()}`,
 //"Access-Control-Allow-Origin": "*",
   //    		"Access-Control-Allow-Credentials": true
 		  },
-		
-		
-  
+
+
+
 };
 //this.str1 = `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`
 
@@ -131,6 +122,6 @@ const myInit = { // OPTIONAL
      console.log(error.message);
  });
 
- 
+
 }
 
