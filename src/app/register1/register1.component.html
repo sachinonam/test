@@ -1,0 +1,129 @@
+<amplify-sign-out></amplify-sign-out>
+
+
+    
+      <body style="background-color: rgb(241,247,252);" ng-app="myApp">
+        /
+        <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+   
+        <DIV class="login-clean">
+           <FORM style="max-width: 700px;" id="form-id">
+              <H1 class="text-center">REGISTRATION FORM</H1>
+              <DIV class="container d-md-flex justify-content-md-center"><IMG class="d-md-flex justify-content-md-center" 
+                 style='width: 150px; background-image: url("assets/img/reachout.png");' src="Register_files/reachout.png"></DIV>
+              <DIV class="form-group">
+                 <DIV class="row">
+                    <DIV class="col">
+                       <DIV 
+                          class="group">
+                          <INPUT tabindex="1" id="first_name" autofocus="" required="" type="text">
+                            <SPAN  class="highlight"></SPAN>          
+                             <SPAN class="bar">
+                             </SPAN><LABEL>First Name</LABEL>           
+                       </DIV>
+  
+                       <DIV 
+                          class="group"><INPUT tabindex="3" id="address_1" required="" type="text">
+                            <SPAN class="highlight"></SPAN>  
+                             <SPAN class="bar"></SPAN>
+                             <LABEL>Address 1</LABEL>           
+                       </DIV>
+  
+                       <DIV 
+                          class="group">
+                          <INPUT tabindex="5" id="city_name" required="" type="text">
+                            <SPAN 
+                          class="highlight"></SPAN>   
+                        <SPAN class="bar"></SPAN>
+                        <LABEL>City Name</LABEL>             
+                       </DIV>
+  
+                       <DIV class="group">
+                         <INPUT tabindex="7" title="Only numeric values allowed" id="zip_code" required="" type="number">
+                          <SPAN class="highlight"></SPAN>
+                          <SPAN class="bar"> </SPAN>
+                          <LABEL>Zip Code</LABEL> 
+                       </DIV>
+                       <DIV 
+                          class="group"><INPUT tabindex="9" id="email_id" required="" type="email">
+                            <SPAN class="highlight"></SPAN>   
+                            <SPAN class="bar"></SPAN>
+                            <LABEL>Email ID</LABEL>       
+                       </DIV>
+                       <DIV style="border: currentColor; border-image: none; height: 120px;" 
+                        >
+                          <SPAN id="top">Select Services: </SPAN>  <BR>
+                          <SELECT name="services" 
+                             tabindex="10" id="services" multiple="">
+                             <OPTION value="1">Pharmacy</OPTION>
+                             <OPTION value="2">Grocery</OPTION>
+                             <OPTION value="3">Food</OPTION>
+                          </SELECT>
+                       </DIV>
+  
+                       <DIV class="group">
+                         <INPUT tabindex="11" title="Minimum 8 characters containing lowercase, uppercase, and at least one number" id="password" required="" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                          <SPAN class="highlight"></SPAN>         
+                          <SPAN class="bar"></SPAN>
+                          <LABEL>Password</LABEL>   
+                        </DIV>
+  
+                       <DIV class="col offset-md-1"><BUTTON tabindex="13" class="btn btn-primary btn-block" style="width: 200px;" type="submit" ng-click="registration()">Submit</BUTTON></DIV>
+                    </DIV>
+                    
+                    <DIV class="col">
+                       <DIV class="group">
+                         <INPUT tabindex="2" required="" type="text">
+                          <SPAN class="highlight"></SPAN> 
+                          <SPAN class="bar"></SPAN>
+                          <LABEL>Last Name</LABEL>           
+                       </DIV>
+  
+                       <DIV 
+                          class="group"><INPUT tabindex="4" id="address_2" required="" type="text">
+                            <SPAN  class="highlight"></SPAN>   
+                             <SPAN class="bar"></SPAN>
+                             <LABEL>Address 2</LABEL>           
+                       </DIV>
+  
+                       <DIV class="dropdown" style="border: currentColor; border-image: none; width: 400px; height: 90px;">
+                          <SPAN id="top">Select State: </SPAN>  <BR>
+                          <SELECT name="State Name" tabindex="6" id="state_name">
+                             <OPTION value="1">New York</OPTION>
+                             <OPTION value="2">New Jersey</OPTION>
+                             <OPTION value="3">South Carolina</OPTION>
+                          </SELECT>
+                       </DIV>
+  
+                       <DIV class="group"><INPUT tabindex="8" title="Only numeric values allowed" id="phone_number" required="" type="number">
+                        <SPAN class="highlight"></SPAN>       
+                          <SPAN class="bar"></SPAN>
+                          <LABEL>Phone Number</LABEL>     
+                       </DIV>
+  
+                       <DIV class="dropdown" style="border: currentColor; border-image: none; height: 207px;">
+                          <SPAN id="top">Select User Type: </SPAN>  <BR>
+                          <SELECT name="User Type" tabindex="11" id="user_type">
+                             <OPTION value="1">Helper</OPTION>
+                             <OPTION value="2">Seeker</OPTION>
+                             <OPTION value="3">Helper &amp; Seeker Both </OPTION>
+                          </SELECT>
+                       </DIV>
+  
+                       <DIV class="group">
+                      <INPUT tabindex="12" title="Minimum 8 characters containing lowercase, uppercase, and at least one number" id="password" required="" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                        <SPAN class="highlight"></SPAN>       
+                          <SPAN class="bar"></SPAN>
+                          <LABEL>Confirm Password</LABEL>     
+                       </DIV>
+  
+                       <DIV class="col"><BUTTON tabindex="14" class="btn btn-primary btn-block" style="width: 200px;" 
+                          type="submit">Cancel</BUTTON></DIV>
+                    </DIV>
+                    
+                 </DIV>
+              </DIV>
+           </FORM>
+        </DIV>
+     </body>
+        

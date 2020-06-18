@@ -5,6 +5,7 @@ import API from '@aws-amplify/api';
 import {enableProdMode} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import Amplify, { Auth } from 'aws-amplify';
+import { FormFieldTypes } from '@aws-amplify/ui-components';
 
 
 //API.configure('GET');
@@ -35,23 +36,63 @@ export class AppComponent {
 	signedIn: boolean;
 	user : any;
 	greeting: any;
-	//formFields: FormFieldTypes;
+	formFields: FormFieldTypes;
     constructor( private amplifyService: AmplifyService,private router: Router ) {
 		
+		this.formFields = [
+			{
+			  type: "email",
+			  label: "Email",
+			  placeholder: "custom email placeholder",
+			  required: true,
+			},
+			{
+			  type: "password",
+			  label: "Password",
+			  placeholder: "custom password placeholder",
+			  required: true,
+			},
+			{
+			  type: "phone_number",
+			  label: "Custom Phone Label",
+			  placeholder: "custom Phone placeholder",
+			  required: false,
+			},
+		];
+
+
 
 		this.amplifyService.authStateChange$
+		.subscribe(authState => {
+			this.signedIn = authState.state === 'SignUp';
+			if (!authState.user) {
+				this.user = null;
+			} else {
+				this.user = authState.user;
+				this.greeting = "Hello " + this.user.username;
+				this.greeting = getData();	
+				this.router.navigate(['/seeker']);
+			}
+		});
+		
+		this.amplifyService.authStateChange$
 			.subscribe(authState => {
-				this.signedIn = authState.state === 'signedIn';
+				this.signedIn = authState.state === 'signIn';
 				if (!authState.user) {
 					this.user = null;
 				} else {
 					this.user = authState.user;
 					this.greeting = "Hello " + this.user.username;
 					this.greeting = getData();	
-					this.router.navigate(['/login']);
+					this.router.navigate(['/register']);
 				}
 			});
-	}	
+
+		
+			
+		
+	
+}	
 
 	
 	
@@ -81,7 +122,8 @@ const myInit = { // OPTIONAL
 //return path;
  return await API.get(apiName, path , myInit)
   .then(response => {
-     return response.data
+	  console.log()
+      return `async response.data`;
   })
   .catch(error => {
 	  debugger;
