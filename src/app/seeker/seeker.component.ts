@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { AmplifyService } from 'aws-amplify-angular';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-helper',
-  templateUrl: './helper.component.html',
-  styleUrls: ['./helper.component.css']
+  selector: 'app-seeker',
+  templateUrl: './seeker.component.html',
+  styleUrls: ['./seeker.component.css']
 })
-export class HelperComponent implements OnInit {
+export class SeekerComponent implements OnInit {
   title = "ReachOut";
 	signedIn: boolean;
   user : any;
@@ -32,4 +31,7 @@ export class HelperComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  renderRequest(): any {
+    this.router.navigate(['/request']);
+  }
 }

@@ -1,10 +1,34 @@
-<template>
-    <amplify-authenticator>
-      <div>
-        Reachout
-        <amplify-sign-out></amplify-sign-out>
-      </div>
-    </amplify-authenticator>
-  </template>
-<p>login works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Reachout</title>
+</head>
+
+<body id="page-top">
+    <header class="d-flex masthead" style="background-image: url('assets/img/Hands.png');">
+        <div class="container my-auto text-center" style="height: 100;">
+            <h1 class="mb-1" style="color: #f4e287;">ReachOut</h1>
+            <h3 class="mb-5"><em style="color: #7cf4e6;">... and be for eachother</em></h3>
+            <div class="table-responsive table-borderless">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th><button class="btn btn-primary btn-lg text-capitalize border rounded" type="button" style="font-size: 48;" (click)="renderHelper()">
+                              Helper</button></th>
+                            <th><button class="btn btn-primary btn-lg text-capitalize border rounded" type="button" (click)="renderSeeker()">
+                              Seeker</button></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
+
+  <amplify-sign-out></amplify-sign-out>
 
