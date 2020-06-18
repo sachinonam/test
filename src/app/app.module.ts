@@ -8,11 +8,12 @@ import { HelperComponent } from './helper/helper.component';
 import { Register1Component } from './register1/register1.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { SeekerhomeComponent } from './seekerhome/seekerhome.component';
 
 
 
 @NgModule({
-declarations: [ AppComponent, HelperComponent, Register1Component,RegisterComponent,LoginComponent],
+declarations: [ AppComponent, HelperComponent, Register1Component,RegisterComponent,LoginComponent, SeekerhomeComponent],
 imports: [ BrowserModule, AppRoutingModule, AmplifyUIAngularModule],
 providers: [AmplifyService],
 bootstrap: [AppComponent]
