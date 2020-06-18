@@ -1,9 +1,24 @@
-<amplify-authenticator></amplify-authenticator>
+<h1>Welcome!</h1>
+<amplify-authenticator usernameAlias="email">
+      <amplify-sign-up
+        slot="sign-up"
+        usernameAlias="email"
+        [formFields]="formFields"
+      >
+
+      <amplify-radio-button>
+            <span class="radio-button">
+              <input placeholder="" type="radio">
+              <amplify-label></amplify-label>
+            </span>
+          </amplify-radio-button>
+
+</amplify-sign-up>
+      <amplify-sign-in slot="sign-in" usernameAlias="email"></amplify-sign-in>
+    </amplify-authenticator>
 
 <div style="text-align:center">
-
-<h1>Welcome to {{greeting}}!</h1>
- <amplify-sign-out></amplify-sign-out>
+ 
 
 </div>
 
