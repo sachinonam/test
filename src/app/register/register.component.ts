@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild, ElementRef} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AmplifyService } from 'aws-amplify-angular';
@@ -21,12 +21,16 @@ import awsconfig from '../../aws-exports';
 })
 export class RegisterComponent implements OnInit {
   
-  constructor() { 
-	
-  }
+  constructor(private router: Router) { }
+
+    @ViewChild('bindingInput') bindingInput: ElementRef;
+    getHTMLAttributeValue(): any {
+      console.warn('HTML attribute value: ' + this.bindingInput.nativeElement.getAttribute('value'));
+      this.router.navigate(['../']);
+    }
 
 
-  
+
   ngOnInit(): void {
   }
 

@@ -21,7 +21,18 @@ Amplify.configure({
 			// Alternatively, with Cognito User Pools use this:
 			// return { Authorization: `Bearer ${(await Auth.currentSession()).getAccessToken().getJwtToken()}` }
 		  }
-		}
+		},
+		{
+			name: "get_requests_API",
+			endpoint: "https://g54vqgfui5.execute-api.us-east-2.amazonaws.com/requests",
+			custom_header: async () => { 
+			  return { Authorization : 'token' } 
+			  // Alternatively, with Cognito User Pools use this:
+			  // return { Authorization: `Bearer ${(await Auth.currentSession()).getAccessToken().getJwtToken()}` }
+			}
+		  }
+		
+	
 	  ]
 	}
   });
@@ -61,19 +72,19 @@ export class AppComponent {
 		];
 
 
-
-		// this.amplifyService.authStateChange$
-		// .subscribe(authState => {
-		// 	this.signedIn = authState.state === 'SignUp';
-		// 	if (!authState.user) {
-		// 		this.user = null;
-		// 	} else {
-		// 		this.user = authState.user;
-		// 		this.greeting = "Hello " + this.user.username;
-		// 		this.greeting = getData();
-		// 		this.router.navigate(['/register']);
-		// 	}
-		// });
+		this.amplifyService.authStateChange$
+		.subscribe(authState => {
+			this.signedIn = authState.state === 'SignUp';
+			if (!authState.user) {
+				this.user = null;
+			} else {
+				this.user = authState.user;
+				this.greeting = "Hello " + this.user.username;
+				//his.greeting = getData();	
+				this.router.navigate(['/seeker']);
+			}
+		});
+		
 
 		this.amplifyService.authStateChange$
 			.subscribe(authState => {
@@ -83,8 +94,10 @@ export class AppComponent {
 				} else {
 					this.user = authState.user;
 					this.greeting = "Hello " + this.user.username;
-					this.greeting = getData();
-					this.router.navigate(['/login']);
+
+					//this.greeting = getData();	
+					this.router.navigate(['/register']);
+
 				}
 			});
 }
@@ -95,6 +108,7 @@ async function getData(){
 
 const apiName = 'testthis';
 const path = '/done';
+
 str1 :  '';
 const myInit = { // OPTIONAL
 
@@ -111,16 +125,16 @@ const myInit = { // OPTIONAL
 
 
 //return path;
- return await API.get(apiName, path , myInit)
+  await API.post(apiName, path , myInit)
   .then(response => {
 	  console.log()
-      return `async response.data`;
-  })
-  .catch(error => {
-	  debugger;
-	  return error
-     console.log(error.message);
- });
+       return `async response.data`;
+   })
+   .catch(error => {
+ 	  debugger;
+ 	  return error
+      console.log(error.message);
+  });
 
 
 }
