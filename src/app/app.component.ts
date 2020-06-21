@@ -73,20 +73,6 @@ export class AppComponent {
 
 
 		this.amplifyService.authStateChange$
-		.subscribe(authState => {
-			this.signedIn = authState.state === 'SignUp';
-			if (!authState.user) {
-				this.user = null;
-			} else {
-				this.user = authState.user;
-				this.greeting = "Hello " + this.user.username;
-				//his.greeting = getData();	
-				this.router.navigate(['/seeker']);
-			}
-		});
-		
-
-		this.amplifyService.authStateChange$
 			.subscribe(authState => {
 				this.signedIn = authState.state === 'signIn';
 				if (!authState.user) {
@@ -94,10 +80,8 @@ export class AppComponent {
 				} else {
 					this.user = authState.user;
 					this.greeting = "Hello " + this.user.username;
-
-					//this.greeting = getData();	
-					this.router.navigate(['/register']);
-
+					//this.greeting = getData();
+					this.router.navigate(['/seeker']);
 				}
 			});
 }

@@ -124,7 +124,7 @@ debugger;
   console.log(res);
 	
   debugger;
-  this.router.navigate(['./register1',[this.users]]);
+  this.router.navigate(['../seeker']);
   }
 
   getCancel(): any {
