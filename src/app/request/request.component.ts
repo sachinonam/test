@@ -35,8 +35,9 @@ export class RequestComponent implements OnInit {
 
 				}
       });
-      const getService = gService();
-      debugger;
+      // this.getService = this.HttpClient.get('https://idaaf5mauf.execute-api.us-east-2.amazonaws.com/dev/getservice');
+      // console.log(this.getService);
+      // debugger;
   }
 
   ngOnInit(): void {
@@ -90,11 +91,3 @@ export class RequestComponent implements OnInit {
          console.log(error.message);
      });
     }
-    async function gService()
-    {
-      const apiName = 'testthis';
-
-      return HttpClient.get(apiName, '/getservice', {method: 'GET', headers: {'Content-Type': 'application/json', 'Authorization' : 'token'}})
-      .then(response => {debugger; console.log(response.data);})
-      .catch(error => {debugger;console.log(error.message);});
-      }
