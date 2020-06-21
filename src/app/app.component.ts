@@ -81,7 +81,7 @@ export class AppComponent {
 					this.user = authState.user;
 					this.greeting = "Hello " + this.user.username;
 					//this.greeting = getData();
-					this.router.navigate(['/seeker']);
+					this.router.navigate(['/login']);
 				}
 			});
 }
