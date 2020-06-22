@@ -38,8 +38,11 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/seeker']);
   }
 
-    renderHelper(): any {
-      this.router.navigate(['/helper']);}
+  renderHelper(): any {
+    this.router.navigate(['/helper']);}
+
+  renderAccount(): any {
+    this.router.navigate(['/AccountSettings']);}
 
 
   }

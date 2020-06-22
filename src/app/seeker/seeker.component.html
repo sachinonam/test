@@ -6,9 +6,6 @@
                   <div class="container">
                       <div class="collapse navbar-collapse" id="navcol-1">
                           <ul class="nav navbar-nav ml-auto">
-                              <li class="nav-item" role="presentation"><a class="nav-link active" >Active</a></li>
-                              <li class="nav-item" role="presentation"><a class="nav-link" >Closed</a></li>
-                              <li class="nav-item" role="presentation"><a class="nav-link">Canceled</a></li>
                               <li class="nav-item" role="presentation"><button class="btn btn-primary" type="button" (click)="renderRequest()">New Request</button></li>
                           </ul>
                       </div>
@@ -16,32 +13,53 @@
               </nav>
           </div>
       </div>
-  </div><div class="d-md-flex align-items-md-center login-clean" style="padding: 30px;">
+  </div>
+  <div class="d-md-flex align-items-md-center login-clean" style="padding: 30px;">
   <form style="width: 800px;max-width: 800px;padding: 20px;">
       <div class="container">
           <div class="form-row">
-              <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">Active Requests opened by you</span></div>
+              <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Active Requests</span></div>
           </div>
-          <div class="table-responsive table-borderless" style="width: 600px;">
+          <div class="table-responsive table-borderless" style="width: 750px;">
               <table class="table table-bordered">
-                  <thead>
-                      <tr>
-                          <th><br /></th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td><img src="assets/img/list_icon.png" /><a href="#">Pharmacy pickup, CVS, Edison, NJ - 20/05/2020<br /></a></td>
-                      </tr>
-                      <tr>
-                          <td><img src="assets/img/list_icon.png" /><a href="#">Pharmacy pickup, CVS, Edison, NJ - 03/05/2020</a><br /></td>
-                      </tr>
-                  </tbody>
+                <tr><th>Request</th><th>Address</th></tr>
+                <tr *ngFor="let seeker of activeSeeker">
+                <td>{{seeker.RequestType}} </td>
+                <td><img src="assets/img/list_icon.png" />{{seeker.Address1}} {{seeker.Address2}} {{seeker.City}} {{seeker.Country}} {{seeker.Zipcode}}</td>
+                <td><a href=''>Close Request</a></td>
+                </tr>
               </table>
           </div>
       </div>
+      <div class="container">
+        <div class="form-row">
+            <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Completed Requests</span></div>
+        </div>
+        <div class="table-responsive table-borderless" style="width: 750px;">
+            <table class="table table-bordered">
+              <tr><th>Request</th><th>Address</th></tr>
+              <tr *ngFor="let seeker of closedSeeker">
+              <td>{{seeker.RequestType}} </td>
+              <td><img src="assets/img/list_icon.png" />{{seeker.Address1}} {{seeker.Address2}} {{seeker.City}} {{seeker.Country}} {{seeker.Zipcode}}</td>
+              </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+      <div class="form-row">
+          <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Cancelled Requests</span></div>
+      </div>
+      <div class="table-responsive table-borderless" style="width: 750px;">
+          <table class="table table-bordered">
+            <tr><th>Request</th><th>Address</th></tr>
+            <tr *ngFor="let seeker of cancelledSeeker">
+            <td>{{seeker.RequestType}} </td>
+            <td><img src="assets/img/list_icon.png" />{{seeker.Address1}} {{seeker.Address2}} {{seeker.City}} {{seeker.Country}} {{seeker.Zipcode}}</td>
+            </tr>
+          </table>
+      </div>
+  </div>
   </form>
 </div>
 </body>
-
 <amplify-sign-out></amplify-sign-out>

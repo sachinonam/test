@@ -7,9 +7,6 @@ import 'rxjs/add/operator/toPromise';
 import Amplify, { Auth } from 'aws-amplify';
 import { FormFieldTypes } from '@aws-amplify/ui-components';
 
-
-//API.configure('GET');
-
 Amplify.configure({
 	API: {
 	  endpoints: [
@@ -18,21 +15,17 @@ Amplify.configure({
 		  endpoint: "https://idaaf5mauf.execute-api.us-east-2.amazonaws.com/dev",
 		  custom_header: async () => {
 			return { Authorization : 'token' }
-			// Alternatively, with Cognito User Pools use this:
-			// return { Authorization: `Bearer ${(await Auth.currentSession()).getAccessToken().getJwtToken()}` }
 		  }
 		},
 		{
 			name: "get_requests_API",
 			endpoint: "https://g54vqgfui5.execute-api.us-east-2.amazonaws.com/requests",
-			custom_header: async () => { 
-			  return { Authorization : 'token' } 
-			  // Alternatively, with Cognito User Pools use this:
-			  // return { Authorization: `Bearer ${(await Auth.currentSession()).getAccessToken().getJwtToken()}` }
+			custom_header: async () => {
+			  return { Authorization : 'token' }
 			}
 		  }
-		
-	
+
+
 	  ]
 	}
   });
@@ -70,8 +63,6 @@ export class AppComponent {
 			  required: false,
 			},
 		];
-
-
 		this.amplifyService.authStateChange$
 			.subscribe(authState => {
 				this.signedIn = authState.state === 'signIn';
@@ -80,35 +71,23 @@ export class AppComponent {
 				} else {
 					this.user = authState.user;
 					this.greeting = "Hello " + this.user.username;
-					//this.greeting = getData();
 					this.router.navigate(['/login']);
 				}
 			});
 }
 }
 
-
 async function getData(){
 
 const apiName = 'testthis';
 const path = '/done';
-
 str1 :  '';
-const myInit = { // OPTIONAL
+const myInit = {
 
 		headers: {
 			Authorization: `Bearer ${( await Auth.currentSession()).getIdToken().getJwtToken()}`,
-//"Access-Control-Allow-Origin": "*",
-  //    		"Access-Control-Allow-Credentials": true
-		  },
+		  },};
 
-
-
-};
-//this.str1 = `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`
-
-
-//return path;
   await API.post(apiName, path , myInit)
   .then(response => {
 	  console.log()
@@ -119,7 +98,4 @@ const myInit = { // OPTIONAL
  	  return error
       console.log(error.message);
   });
-
-
 }
-

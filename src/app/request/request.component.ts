@@ -1,11 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef, Injectable } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { AmplifyService } from 'aws-amplify-angular';
 import { Router } from '@angular/router';
 import API from '@aws-amplify/api';
 import 'rxjs/add/operator/toPromise';
 import {AppComponent} from '../app.component';
-import { HttpClient } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-request',
@@ -13,13 +11,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./request.component.css'],
 })
 
-
 export class RequestComponent implements OnInit {
   title = "ReachOut";
 	signedIn: boolean;
   user : any;
   greeting : string;
   getService: any;
+  getCountry: any;
 
   constructor(private amplifyService: AmplifyService,private router: Router, public myapp: AppComponent) {
     this.amplifyService.authStateChange$
@@ -35,9 +33,8 @@ export class RequestComponent implements OnInit {
 
 				}
       });
-      // this.getService = this.HttpClient.get('https://idaaf5mauf.execute-api.us-east-2.amazonaws.com/dev/getservice');
-      // console.log(this.getService);
-      // debugger;
+   this.getService = [{"Service_Name": "Parcel Collection"}, {"Service_Name": "Grocery"}, {"Service_Name": "Hospital Services"}, {"Service_Name": "Medical"}];
+   this.getCountry = [{"Country_Name": "New York"}, {"Country_Name": "New Jersey"}, {"Country_Name": "South Carolina"}];
   }
 
   ngOnInit(): void {
@@ -90,4 +87,4 @@ export class RequestComponent implements OnInit {
         return error
          console.log(error.message);
      });
-    }
+  }

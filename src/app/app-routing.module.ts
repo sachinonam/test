@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SeekerComponent } from './seeker/seeker.component';
 import { HelperComponent } from './helper/helper.component';
 import { RequestComponent } from './request/request.component';
-import { Register1Component } from './register1/register1.component';
+import { AccountSettings } from './register1/register1.component';
 
 
 
@@ -13,7 +13,7 @@ const routes: Routes = [
 { path: 'helper', component: HelperComponent },
 { path: 'login', component: LoginComponent },
 { path: 'request', component: RequestComponent},
-{ path: 'register', component: Register1Component}
+{ path: 'AccountSettings', component: AccountSettings}
 ];
 
 @NgModule({

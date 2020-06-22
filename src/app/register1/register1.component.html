@@ -1,125 +1,51 @@
-
-
-
-
-		
-		<amplify-sign-out></amplify-sign-out>
-		
-      <body style="background-color: rgb(241,247,252);" ng-app="myApp">
-        
-        <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
-   
-        <DIV class="login-clean">
-           <FORM style="max-width: 700px;" id="form-id">
-              <H1 class="text-center">Please Update Details(important)</H1>
-              <DIV class="container d-md-flex justify-content-md-center"><IMG class="d-md-flex justify-content-md-center" 
-                 style='width: 150px; background-image: url("login/img/reachout.png");' src="..\login\img\reachout.png"></DIV>
-              <DIV class="form-group">
-                 <DIV class="row">
-                    <DIV class="col">
-                       <DIV 
-                          class="group">
-                          <input type="text" value="Sarah" #First_Name> 
-                            <SPAN  class="highlight"></SPAN>          
-                             <SPAN class="bar">
-                             </SPAN><LABEL>First Name</LABEL>           
-                       </DIV>
-  
-   
-						<DIV 
-                          class="group"><input type="text" value="" #Address_1>
-                            <SPAN class="highlight"></SPAN>  
-                             <SPAN class="bar"></SPAN>
-                             <LABEL>Address 1</LABEL>           
-                       </DIV>
-  
-                       <DIV 
-                          class="group">
-                          <input type="text" value="" #city>
-                            <SPAN 
-                          class="highlight"></SPAN>   
-                        <SPAN class="bar"></SPAN>
-                        <LABEL>City Name</LABEL>             
-                       </DIV>
-  
-                     
-                       <DIV class="dropdown">
-                        <SPAN id="top">Select User Type: </SPAN>  <BR>
-                        <SELECT name="Services" #services>
-                           <OPTION value="1">Pharmacy</OPTION>
-                             <OPTION value="2">Grocery</OPTION>
-                             <OPTION value="3">Food</OPTION>
-                        </SELECT>
-                     </DIV>
-                      
-  
-
-                       <DIV class="col offset-md-1"><BUTTON tabindex="13" class="btn btn-primary btn-block" style="width: 200px;" type="submit" (click)="getHTMLAttributeValue()">Submit</BUTTON></DIV>
-                    </DIV>
-                    
-                    <DIV class="col">
-                       <DIV class="group">
-                        <input type="text" value="" #Last_Name>
-                          <SPAN class="highlight"></SPAN> 
-                          <SPAN class="bar"></SPAN>
-                          <LABEL>Last Name</LABEL>           
-                       </DIV>
-  
-                       <DIV 
-                          class="group"><input type="text" value="" #Address_2>
-                            <SPAN  class="highlight"></SPAN>   
-                             <SPAN class="bar"></SPAN>
-                             <LABEL>Address 2</LABEL>           
-                       </DIV>
-  
-                       <DIV class="group">
-                        <input type="number" value="" #zip_code>
-                          <SPAN class="highlight"></SPAN>
-                          <SPAN class="bar"> </SPAN>
-                          <LABEL>Zip Code</LABEL> 
-                       </DIV>
-  
-                       <DIV class="dropdown">
-                          <SPAN id="top">Select User Type: </SPAN>  <BR>
-                          <SELECT name="User Type" #user_type>
-                             <OPTION value="1">Helper</OPTION>
-                             <OPTION value="2">Seeker</OPTION>
-                             <OPTION value="3">Helper &amp; Seeker Both </OPTION>
-                          </SELECT>
-                       </DIV>
-  
-                        
-                       <DIV class="col"><BUTTON tabindex="14" class="btn btn-primary btn-block" style="width: 200px;" 
-                          type="submit" (click)="getCancel()">Cancel</BUTTON></DIV>
-                    </DIV>
-                  <SCRIPT src="Register_files/jquery.min.js"></SCRIPT>
-                  <SCRIPT src=""></SCRIPT>
-                  <SCRIPT src="Register_files/bootstrap.min.js"></SCRIPT>
-                  <SCRIPT src="Register_files/jquery.easing.min.js"></SCRIPT>
-                  <SCRIPT src="Register_files/stylish-portfolio.js"></SCRIPT>
-                 </DIV>
-              </DIV>
-           </FORM>
-        </DIV>
-		<!--<DIV class="col">
-		<p>Active Requests:</p>
-     	 <table border=1>
-	 <tr>
-  <ul>
-    <li *ngFor="let user of users">
-      <td width=100> {{ user.RequestType}}  </td>
-	  <td width=100> {{ user.RequestType}}  </td>
-	  <td width=100> {{user.Zipcode}} </td>
-	  <td width=100> {{ user.Address1}}  </td>
-	  <td width=100> {{ user.Country}}  </td>
-	  <td width=100> {{ user.Address2}}  </td>
-	  <td width=100><input type="radio" id="male" name="gender" value="male" (click)="getCancel()"></td>
-    </li>
-  </ul>  
-</tr>
-</table> 
-</DIV> -->
-     </body>
-        
-
-     
+<html style= "height: 87%;" >
+<body style="background-color: rgb(241,247,252);">
+  <div>
+    <div class="d-md-flex justify-content-md-center align-items-md-center intro"><a href=#><img class="d-md-flex justify-content-md-center align-items-md-center" style="background-image: url('assets/img/reachout.png');width: 130px;" src="assets/img/reachout.png"></a>
+    </div>
+</div>
+    <div class="d-md-flex align-items-md-center login-clean" style="padding: 30px;" >
+        <form style="height: 650px;max-width: 700px;">
+            <div class="form-group">
+                <div class="table-responsive table-borderless">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td><input class="form-control" type="text" style="width: 300;" placeholder="FirstName" name="first_name" required #First_Name></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 300;"><input class="form-control" type="text" placeholder="Last Name" name="last_name" required #Last_Name></td>
+                            </tr>
+                            <tr>
+                                <td><input class="form-control" type="text" placeholder="Address 1" name="address_1" required #Address_1></td>
+                            </tr>
+                            <tr>
+                                <td><input class="form-control" type="text" placeholder="Address 2" name="address_2" #Address_2></td>
+                            </tr>
+                            <tr>
+                                <td><input class="form-control" type="text" required="" placeholder="City" name="city" #city></td>
+                            </tr>
+                            <tr>
+                              <td><input class="form-control" type="text" required="" placeholder="State" name="State" #state_name></td>
+                          </tr>
+                            <tr>
+                                <td><input class="form-control" type="text" required="" inputmode="numeric" name="zip_code" placeholder="Zip Code" #zip_code></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-switch d-md-flex flex-fill justify-content-md-center"><input class="custom-control-input" type="checkbox" id="formCheck-2"><label class="custom-control-label" for="formCheck-2">Stay Active/Inactive</label></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                  <div class="form-row text-center">
+                      <div class="col offset-md-1"><button class="btn btn-primary btn-block" type="submit" style="width: 200px;" (click)="getHTMLAttributeValue()">Submit</button></div>
+                      <div class="col"><button class="btn btn-primary btn-block" type="button" style="width: 200px;" (click)="getCancel()">Cancel</button></div>
+                  </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<amplify-sign-out></amplify-sign-out>

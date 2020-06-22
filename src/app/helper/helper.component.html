@@ -10,46 +10,55 @@
 <body style="background-color: rgb(241,247,252);">
     <div class="container">
         <div class="d-md-flex justify-content-md-center align-items-md-center intro"><a href=#><img class="d-md-flex justify-content-md-center align-items-md-center" style="background-image: url('assets/img/reachout.png');width: 130px;" src="assets/img/reachout.png"></a>
-            <div>
-                <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="width: 600px;">
-                    <div class="container">
-                        <div class="collapse navbar-collapse" id="navcol-1">
-                            <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item" role="presentation"><a class="nav-link active">Accepted</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link">Open</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link">Closed</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
         </div>
     </div>
     <div class="d-md-flex align-items-md-center login-clean" style="padding: 30px;">
-        <form style="width: 800px;max-width: 800px;padding: 20px;">
-            <div class="container">
-                <div class="form-row">
-                    <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;"><span class="text-center" style="font-size: 25px;">&nbsp; &nbsp; Active Requests accepted by you</span></div>
-                </div>
-                <div class="table-responsive table-borderless" style="width: 600px;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th><br></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><img src="assets/img/list_icon.png"><a>Pharmacy pickup, CVS, Edison, NJ - 20/05/2020<br></a></td>
-                            </tr>
-                            <tr>
-                                <td><img src="assets/img/list_icon.png"><a>Pharmacy pickup, CVS, Edison, NJ - 03/05/2020</a><br></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+      <form style="width: 800px;max-width: 800px;padding: 20px;">
+          <div class="container">
+              <div class="form-row">
+                  <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Accepted Requests</span></div>
+              </div>
+              <div class="table-responsive table-borderless" style="width: 750px;">
+                  <table class="table table-bordered">
+                    <tr><th>Request</th><th>Address</th></tr>
+                    <tr *ngFor="let helper of acceptHelper">
+                    <td>{{helper.RequestType}} </td>
+                    <td><img src="assets/img/list_icon.png" />{{helper.Address1}} {{helper.Address2}} {{helper.City}} {{helper.Country}} {{helper.Zipcode}}</td>
+                    <td><a href=''>Mark Complete</a></td>
+                    </tr>
+                  </table>
+              </div>
+          </div>
+          <div class="container">
+            <div class="form-row">
+                <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Open Requests</span></div>
             </div>
-        </form>
+            <div class="table-responsive table-borderless" style="width: 750px;">
+                <table class="table table-bordered">
+                  <tr><th>Request</th><th>Address</th><th></th></tr>
+                  <tr *ngFor="let helper of openHelper">
+                  <td>{{helper.RequestType}} </td>
+                  <td><img src="assets/img/list_icon.png" />{{helper.Address1}} {{helper.Address2}} {{helper.City}} {{helper.Country}} {{helper.Zipcode}}</td>
+                  <td><a href=''>Accept Request</a></td>
+                  </tr>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+          <div class="form-row">
+              <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Completed Requests</span></div>
+          </div>
+          <div class="table-responsive table-borderless" style="width: 750px;">
+              <table class="table table-bordered">
+                <tr><th>Request</th><th>Address</th></tr>
+                <tr *ngFor="let helper of closedHelper">
+                <td>{{helper.RequestType}} </td>
+                <td><img src="assets/img/list_icon.png" />{{helper.Address1}} {{helper.Address2}} {{helper.City}} {{helper.Country}} {{helper.Zipcode}}</td>
+                </tr>
+              </table>
+          </div>
+      </div>
+      </form>
     </div>
 </body>
 </html>
