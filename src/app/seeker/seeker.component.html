@@ -1,3 +1,4 @@
+<html style= "height: 80%;">
 <body style="background-color: rgb(241,247,252);">
     <div class="container">
       <div class="d-md-flex justify-content-md-center align-items-md-center intro"><a href=#><img class="d-md-flex justify-content-md-center align-items-md-center" style="background-image: url('assets/img/reachout.png');width: 130px;" src="assets/img/reachout.png"></a>
@@ -15,18 +16,18 @@
       </div>
   </div>
   <div class="d-md-flex align-items-md-center login-clean" style="padding: 30px;">
-  <form style="width: 800px;max-width: 800px;padding: 20px;">
+  <form style="width: 900px;max-width: 900px;padding: 20px;">
       <div class="container">
           <div class="form-row">
               <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Active Requests</span></div>
           </div>
-          <div class="table-responsive table-borderless" style="width: 750px;">
+          <div class="table-responsive table-borderless" style="width: 850px;">
               <table class="table table-bordered">
-                <tr><th>Request</th><th>Address</th></tr>
+                <tr><th>Action</th><th>Request</th><th>Address</th></tr>
                 <tr *ngFor="let seeker of activeSeeker">
+                <td><a href=''>Close Request</a></td>
                 <td>{{seeker.RequestType}} </td>
                 <td><img src="assets/img/list_icon.png" />{{seeker.Address1}} {{seeker.Address2}} {{seeker.City}} {{seeker.Country}} {{seeker.Zipcode}}</td>
-                <td><a href=''>Close Request</a></td>
                 </tr>
               </table>
           </div>
@@ -35,7 +36,7 @@
         <div class="form-row">
             <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Completed Requests</span></div>
         </div>
-        <div class="table-responsive table-borderless" style="width: 750px;">
+        <div class="table-responsive table-borderless" style="width: 850px;">
             <table class="table table-bordered">
               <tr><th>Request</th><th>Address</th></tr>
               <tr *ngFor="let seeker of closedSeeker">
@@ -49,7 +50,7 @@
       <div class="form-row">
           <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Cancelled Requests</span></div>
       </div>
-      <div class="table-responsive table-borderless" style="width: 750px;">
+      <div class="table-responsive table-borderless" style="width: 850px;">
           <table class="table table-bordered">
             <tr><th>Request</th><th>Address</th></tr>
             <tr *ngFor="let seeker of cancelledSeeker">
@@ -63,3 +64,4 @@
 </div>
 </body>
 <amplify-sign-out></amplify-sign-out>
+</html>

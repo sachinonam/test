@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+<html style= "height: 80%;" >
 
 <head>
     <meta charset="utf-8">
@@ -13,18 +12,18 @@
         </div>
     </div>
     <div class="d-md-flex align-items-md-center login-clean" style="padding: 30px;">
-      <form style="width: 800px;max-width: 800px;padding: 20px;">
+      <form style="width: 900px;max-width: 900px;padding: 20px;">
           <div class="container">
               <div class="form-row">
                   <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Accepted Requests</span></div>
               </div>
-              <div class="table-responsive table-borderless" style="width: 750px;">
+              <div class="table-responsive table-borderless" style="width: 850px;">
                   <table class="table table-bordered">
-                    <tr><th>Request</th><th>Address</th></tr>
+                    <tr><th>Action</th><th>Request</th><th>Address</th><th></th></tr>
                     <tr *ngFor="let helper of acceptHelper">
+                    <td><a href=''>Mark Complete</a></td>
                     <td>{{helper.RequestType}} </td>
                     <td><img src="assets/img/list_icon.png" />{{helper.Address1}} {{helper.Address2}} {{helper.City}} {{helper.Country}} {{helper.Zipcode}}</td>
-                    <td><a href=''>Mark Complete</a></td>
                     </tr>
                   </table>
               </div>
@@ -33,13 +32,13 @@
             <div class="form-row">
                 <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Open Requests</span></div>
             </div>
-            <div class="table-responsive table-borderless" style="width: 750px;">
+            <div class="table-responsive table-borderless" style="width: 850px;">
                 <table class="table table-bordered">
-                  <tr><th>Request</th><th>Address</th><th></th></tr>
+                  <tr><th>Action</th><th>Request</th><th>Address</th><th></th></tr>
                   <tr *ngFor="let helper of openHelper">
+                  <td><a href=''>Accept Request</a></td>
                   <td>{{helper.RequestType}} </td>
                   <td><img src="assets/img/list_icon.png" />{{helper.Address1}} {{helper.Address2}} {{helper.City}} {{helper.Country}} {{helper.Zipcode}}</td>
-                  <td><a href=''>Accept Request</a></td>
                   </tr>
                 </table>
             </div>
@@ -48,7 +47,7 @@
           <div class="form-row">
               <div class="col"><img src="assets/img/arrow_icon.png" style="width: 35px;" /><span class="text-center" style="font-size: 25px;">&nbsp;&nbsp;Completed Requests</span></div>
           </div>
-          <div class="table-responsive table-borderless" style="width: 750px;">
+          <div class="table-responsive table-borderless" style="width: 850px;">
               <table class="table table-bordered">
                 <tr><th>Request</th><th>Address</th></tr>
                 <tr *ngFor="let helper of closedHelper">
@@ -60,6 +59,6 @@
       </div>
       </form>
     </div>
+    <amplify-sign-out></amplify-sign-out>
 </body>
 </html>
-<amplify-sign-out></amplify-sign-out>
