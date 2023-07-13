@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
     "@aws-amplify/ui-angular": "^0.2.8",
-    "aws-amplify": "^3.0.17",
+    "aws-amplify": "^5.3.3",
     "aws-amplify-angular": "^5.0.17",
     "bootstrap": "^4.5.0",
     "package.json": "^2.0.1",
